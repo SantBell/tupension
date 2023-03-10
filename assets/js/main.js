@@ -1,9 +1,3 @@
-/**
-* Template Name: Avilon - v2.1.0
-* Template URL: https://bootstrapmade.com/avilon-bootstrap-landing-page-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 !(function($) {
   "use strict";
 
@@ -152,3 +146,17 @@
   });
 
 })(jQuery);
+
+const closeDetails = document.querySelectorAll('details');
+
+closeDetails.forEach(details => {
+    details.addEventListener('toggle', (e) => {
+        if (details.open) {
+            closeDetails.forEach(details => {
+                if (details != e.target && details.open) {
+                    details.open = false;
+                }
+            });
+        }
+    });
+});
